@@ -1,58 +1,71 @@
 <script>
-	import Header from '$lib/header/Header.svelte';
-  import { webVitals } from '$lib/vitals';
-  import { browser } from '$app/env';
-  import { page } from '$app/stores';
+  import Header from '$lib/header/Header.svelte';
   import '../app.css';
-
-  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
-
-  $: if (browser && analyticsId) {
-    webVitals({
-      path: $page.url.pathname,
-      params: $page.params,
-      analyticsId
-    })
-  }
+  import { count } from '$lib/stores.js';
 </script>
 
-<Header />
+<div class="wrapper">
+  <div class="box header"><Header /></div>
+  <div class="box sidebar">
+    Sidebar
+    
+    <p>The App Shell has its own stores and cannot access other MFEs' stores. For example, click
+    count store remains 0 in the sidebar while it can increase in MFE 1. Clicks: {$count}</p>
+  </div>
+  <div class="box content">
+    <main>
+      <slot />
+    </main>
+  </div>
+  <div class="box footer">Footer</div>
+</div>
 
-<main>
-	<slot />
-</main>
-
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-</footer>
+<footer />
 
 <style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
+  .sidebar {
+    grid-area: sidebar;
+  }
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
+  .content {
+    grid-area: content;
+    position: relative;
+  }
 
-	footer a {
-		font-weight: bold;
-	}
+  .header {
+    grid-area: header;
+  }
 
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	}
+  .footer {
+    grid-area: footer;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 250px auto;
+    grid-template-areas:
+      'header  header'
+      'sidebar content'
+      'footer  footer ';
+    background-color: #fff;
+    color: #444;
+  }
+
+  .box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 50px;
+    font-size: 150%;
+  }
+
+  .header,
+  .footer {
+    background-color: #999;
+  }
+
+  p {
+    font-size: small;
+  }
 </style>

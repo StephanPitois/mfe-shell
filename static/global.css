@@ -1,0 +1,48 @@
+/* MFE Main Section */
+
+*::part(mfeMain) {
+    background: #e1d5e7;
+    color: #333;
+    padding: 50px;
+    border-radius: 5px;
+    position: relative;
+    border: 5px dashed transparent;
+}
+
+*::part(mfeMain):hover {
+    border: 5px dashed #947e9f;
+}
+
+*::part(mfeMain)::before {
+    content: "micro-frontend";
+    display: inline-block;
+    transform: translate(-36px, -77px);
+    top: 0;
+    left: 0;
+    font-size: x-small;
+    background-color: #edebfc;
+    color: #333;
+    border: 1px solid #333;
+    padding: 3px 6px;
+    border-radius: 5px;
+}
+
+*::part(mfeMainH1) {
+    font-size: 150%;
+    margin: 0 0 35px 0;
+}
+
+*::part(mfeMainImg) {
+    width: 500px;
+    max-width: 50%;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+*::part(mfeMainP) {
+    background: #ab97c5;
+    padding: 25px;
+    border-radius: 5px;
+    margin-top: 0;
+    font-size: small;
+}

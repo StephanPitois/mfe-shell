@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite dev --port 1970",
     "build": "vite build",
     "package": "svelte-kit package",
     "preview": "vite preview",
