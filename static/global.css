@@ -33,8 +33,7 @@
 }
 
 *::part(mfeMainImg) {
-    width: 500px;
-    max-width: 50%;
+    height: 100px;
     margin-bottom: 25px;
     border-radius: 5px;
 }
