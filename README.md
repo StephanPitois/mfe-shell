@@ -24,7 +24,7 @@ PUBLIC_MFE_2=
 PUBLIC_MFE_3=
 ```
 
-These values will need to be updated in your deployment pipeline to reflect the deployed URLs of your MFEs.
+These values will need to be updated in your deployment pipeline to reflect the deployed URLs of your MFEs, i.e., the path to the `bundle.js`.
 
 In a production-ready version of this app, we would use a micro-frontend discovery service to prevent this
 kind of setup from becoming unmanageable.
