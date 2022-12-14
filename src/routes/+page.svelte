@@ -6,5 +6,5 @@
 <p>
     A simple Svelte-based micro-frontend demo. 
     Choose Page 1 or Page 2 from the navigation menu to 
-    see microfrontends in action.
+    see micro-frontends in action.
 </p>

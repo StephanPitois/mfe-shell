@@ -20,7 +20,7 @@
 <Spacer />
 
 <!-- You can have as many MFEs on the same page as needed: -->
-<p>Another MFE is added below to demonstrate that you can have more than one MFE per page.</p>
+<p>You can have as many MFEs as needed on the same page.</p>
 
 <Spacer />
 

@@ -10,11 +10,14 @@
 
   // Use this to listen to events triggered by other micro-frontends:
   const listener = ({ detail }) => {
-    console.log('Layout heard Totoro.');
-    totoroEvents = [...totoroEvents, {
-      ts: new Date(),
-      message: detail.message
-    }];
+    console.log('Layout heard TOTORO_WAS_CLICKED.');
+    totoroEvents = [
+      ...totoroEvents,
+      {
+        ts: new Date(),
+        message: 'TOTORO_WAS_CLICKED'
+      }
+    ];
   };
 
   onMount(async () => {
@@ -34,22 +37,40 @@
   <div class="box header"><Header /></div>
   <div class="box sidebar">
     Sidebar
+    <br />
+    <br />
+    <hr />
     <p>
-      The App Shell has its own stores and cannot access other MFEs' stores. For example, click
-      count store remains 0 in the sidebar while it can increase in MFE 1. Clicks: {$count}
+      <b>Store boundaries</b>: the app shell cannot access a micro-frontend store, and
+      micro-frontends can only access their own stores. This boundary gives micro-frontends full
+      control over their own stores.
     </p>
-
-    Events
-    {#if totoroEvents.length}
-      {#each totoroEvents as totoroEvent}
-        <p>
-          {(new Date(totoroEvent.ts)).toLocaleTimeString()}<br>
-          {totoroEvent.message}
-        </p>
-      {/each}
-    {:else}
-      <p>No events yet. Click on Totoro's first child component.</p>
-    {/if}
+    <div class="mfeCard">
+      <div class="mfeCardTitle">Stores owned by app shell</div>
+      <div class="mfeCardBody">
+        <code>$count = {$count}</code>
+      </div>
+    </div>
+    <br />
+    <hr />
+    <p>
+      <b>Custom events</b>: the app shell and the micro-frontends when rendered on the same page use
+      custom events to communicate with each other.
+    </p>
+    <div class="mfeCard">
+      <div class="mfeCardTitle">Events caught by app shell</div>
+      <div class="mfeCardBody">
+        {#if totoroEvents.length}
+          {#each totoroEvents as totoroEvent}
+            <code>
+              {new Date(totoroEvent.ts).toLocaleTimeString()}: {totoroEvent.message}
+            </code>
+          {/each}
+        {:else}
+          <i>Waiting for TOTORO_WAS_CLICKED...</i>
+        {/if}
+      </div>
+    </div>
   </div>
   <div class="box content">
     <main>
@@ -82,7 +103,7 @@
   .wrapper {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 250px auto;
+    grid-template-columns: 350px auto;
     grid-template-areas:
       'header  header'
       'sidebar content'
@@ -95,16 +116,27 @@
     background-color: #444;
     color: #fff;
     border-radius: 5px;
-    padding: 50px;
-    font-size: 150%;
+    padding: 30px;
+    font-size: 125%;
   }
 
   .header,
   .footer {
-    background-color: #999;
+    background-color: #444;
+    color: #fff;
   }
 
   p {
     font-size: small;
+  }
+
+  code {
+    white-space: nowrap;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  .mfeCardBody {
+    padding: 10px;
   }
 </style>
