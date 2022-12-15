@@ -4,7 +4,7 @@
   import Header from '$lib/header/Header.svelte';
   import '../app.css';
   import { count } from '$lib/stores.js';
-  import { onMount, onDestroy } from 'svelte';
+  import { registerEventListeners } from '$lib/EventListeners';
 
   let totoroEvents = [];
 
@@ -20,17 +20,12 @@
     ];
   };
 
-  onMount(async () => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('TOTORO_WAS_CLICKED', listener);
+  registerEventListeners('App Shell: Layout', [
+    {
+      eventType: 'TOTORO_WAS_CLICKED',
+      listener
     }
-  });
-
-  onDestroy(async () => {
-    if (typeof window !== 'undefined') {
-      window.removeEventListener('TOTORO_WAS_CLICKED', listener);
-    }
-  });
+  ]);
 </script>
 
 <div class="wrapper">

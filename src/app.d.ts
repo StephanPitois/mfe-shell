@@ -11,4 +11,10 @@ declare namespace App {
   // interface PrivateEnv {}
 
   // interface PublicEnv {}
+
+}
+
+type EventRegistration = {
+  eventType: string;
+  listener: function;
 }

@@ -1,13 +1,11 @@
 <script>
-  import { bundles, isRegistered } from '$lib/Discovery';
+  import ImportMicroFrontends from '$lib/components/ImportMicroFrontends.svelte';
 </script>
 
 <svelte:head>
   <title>Page 2 - MFE Demo</title>
   <meta name="description" content="Page 2 - MFE demo app" />
-  {#if !isRegistered('fl-noface')}
-    <script src={bundles.flNoFace}></script>
-  {/if}
+  <ImportMicroFrontends tags={['fl-noface']} />
 </svelte:head>
 
 <fl-noface />

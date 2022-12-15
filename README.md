@@ -26,8 +26,43 @@ PUBLIC_MFE_3=
 
 These values will need to be updated in your deployment pipeline to reflect the deployed URLs of your MFEs, i.e., the path to the `bundle.js`.
 
-In a production-ready version of this app, we would use a micro-frontend discovery service to prevent this
-kind of setup from becoming unmanageable.
+By default on your localhost these are equivalent to:
+
+```
+PUBLIC_MFE_1=http://localhost:1971/build/bundle.js
+PUBLIC_MFE_2=http://localhost:1972/build/bundle.js
+PUBLIC_MFE_3=http://localhost:1973/build/bundle.js
+```
+
+When using production MFEs, it looks like this:
+
+```
+PUBLIC_MFE_1=https://mfe-1-psi.vercel.app/build/bundle.js
+PUBLIC_MFE_2=https://mfe-2.vercel.app/build/bundle.js
+PUBLIC_MFE_3=https://mfe-3.vercel.app/build/bundle.js
+```
+
+When working on a specific MFE locally, the preferred setup is to just have the app shell and the targeted MFE
+running locally and then using deployed MFEs for the rest. Not only does this keep things simple and
+focused on your dev machine, but having only one local MFE allows for live-reload, which is essential
+to good devloper experience. For example, if you want to develop MFE2, your config would look like this:
+
+```
+PUBLIC_MFE_1=https://mfe-1-psi.vercel.app/build/bundle.js
+PUBLIC_MFE_2=
+PUBLIC_MFE_3=https://mfe-3.vercel.app/build/bundle.js
+```
+
+This is equivalent to:
+
+```
+PUBLIC_MFE_1=https://mfe-1-psi.vercel.app/build/bundle.js
+PUBLIC_MFE_2=http://localhost:1972/build/bundle.js
+PUBLIC_MFE_3=https://mfe-3.vercel.app/build/bundle.js
+```
+
+In a production-ready version of this app, we could use a micro-frontend discovery service to help keep
+things decoupled and manageable.
 
 ## Notes
 
