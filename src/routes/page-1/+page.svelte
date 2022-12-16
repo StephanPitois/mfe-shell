@@ -11,14 +11,6 @@
 
 <fl-totoro />
 
-<!-- <Spacer /> -->
-<!-- <p>You can have as many MFEs as needed on the same page.</p> -->
 <Spacer height={'20px'} />
 
 <fl-catbus />
-
-<style>
-  p {
-    font-size: small;
-  }
-</style>
