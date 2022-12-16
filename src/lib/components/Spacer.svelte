@@ -1,9 +1,7 @@
-<div class="spacer">
+<script>
+     export let height = '2rem';
+</script>
+
+<div class="spacer" style={`min-height: ${height}`}>
 
 </div>
-
-<style>
-    .spacer {
-        min-height: 2rem;
-    }
-</style>

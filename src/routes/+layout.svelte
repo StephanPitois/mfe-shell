@@ -67,7 +67,7 @@
       </div>
     </div>
   </div>
-  <div class="box content">
+  <div class="xxx-box xxx-content">
     <main>
       <slot />
     </main>
@@ -82,10 +82,10 @@
     grid-area: sidebar;
   }
 
-  .content {
+  /* .content {
     grid-area: content;
     position: relative;
-  }
+  } */
 
   .header {
     grid-area: header;
@@ -97,7 +97,7 @@
 
   .wrapper {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 20px;
     grid-template-columns: 350px auto;
     grid-template-areas:
       'header  header'

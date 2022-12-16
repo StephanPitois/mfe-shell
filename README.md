@@ -72,6 +72,19 @@ TODO:
 - some global styling can be done in app.css or via link/stylesheet in app.html in the app shell,
   but ::part() may be needed too to pierce through shadow tree.
 
+
+Create new helper, `dispatchCustomEvent` to simplify and standardize this kind of call - naming, payload, etc...:
+
+```
+		// Use this to communicate with other micro-frontends:
+		window.dispatchEvent(
+			new CustomEvent("TOTORO_WAS_CLICKED", {
+				detail: { message: "Totoro's first component was clicked." },
+			})
+		);
+```
+
+
 # About Custom Elements 
 
 _from Svelte documentation_
