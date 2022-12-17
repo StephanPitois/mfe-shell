@@ -40,7 +40,7 @@
       micro-frontends can only access their own stores. This boundary gives micro-frontends full
       control over their own stores.
     </p>
-    <div class="mfeCard">
+    <div class="mfeCard mfeCardAlt">
       <div class="mfeCardTitle">Stores owned by app shell</div>
       <div class="mfeCardBody">
         <code>$count = {$count}</code>
@@ -52,7 +52,7 @@
       <b>Custom events</b>: the app shell and the micro-frontends when rendered on the same page use
       custom events to communicate with each other.
     </p>
-    <div class="mfeCard">
+    <div class="mfeCard mfeCardAlt">
       <div class="mfeCardTitle">Events caught by app shell</div>
       <div class="mfeCardBody">
         {#if totoroEvents.length}

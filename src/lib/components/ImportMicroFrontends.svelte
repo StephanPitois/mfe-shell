@@ -12,6 +12,7 @@
 </script>
 
 {#each tags as tag}
+  <!-- TODO: in addition to checking if the tag is registered, also check that the script was not alreay added -->
   {#if !isRegistered(tag)}
     <script src={bundles[tag]}></script>
   {/if}

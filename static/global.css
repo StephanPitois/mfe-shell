@@ -1,6 +1,6 @@
 /* MFE Main Section */
 
-*::part(mfeMain) {
+.mfeMain {
     background: #e1d5e7;
     color: #333;
     padding: 25px;
@@ -8,18 +8,18 @@
     border: 5px dashed transparent;
 }
 
-*::part(mfeMainH1) {
+.mfeMainH1 {
     font-size: 200%;
     margin: 0 0 35px 0;
 }
 
-*::part(mfeMainImg) {
+.mfeMainImg {
     height: 100px;
     /* margin-bottom: 25px; */
     border-radius: 5px;
 }
 
-*::part(mfeMainP) {
+.mfeMainP {
     background: #b7a3d1;
     padding: 25px;
     border-radius: 5px;
@@ -27,20 +27,14 @@
     font-size: small;
 }
 
-.mfeCard,
-*::part(mfeCard) {
-    font-size: small;
+.mfeCard {
     border: 1px solid #b7a3d1;
+    font-size: small;
     border-radius: 5px;
     overflow: hidden;
 }
 
-.mfeCard {
-    border: 1px solid #efefef;
-}
-
-.mfeCardTitle,
-*::part(mfeCardTitle) {
+.mfeCardTitle {
     background: #b7a3d1;
     color: #333;
     display: block;
@@ -49,6 +43,10 @@
     padding: 3px 6px;
 }
 
-.mfeCardTitle {
+.mfeCardAlt {
+    border: 1px solid #efefef;
+}
+
+.mfeCardAlt .mfeCardTitle {
     background: #efefef;
 }
