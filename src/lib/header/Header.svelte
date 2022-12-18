@@ -1,25 +1,7 @@
 <script>
-  // @ts-nocheck
-
   import { page } from '$app/stores';
-  import ImportMicroFrontends from '$lib/components/ImportMicroFrontends.svelte';
+  import MicroFrontend from '$lib/components/MicroFrontend.svelte';
 </script>
-
-<svelte:head>
-  <!-- 
-    FIXME: must use different keys to identify bundle and components because
-    a bundle can contain multiple component_subscribe.
-    In this case, fl-shopping-cart is contained in the same bundle as 
-    fl-noface. Including fl-noface will includ fl-shopping-cart, but this
-    is very confusing, hence the need for separate bundle and component IDs.
-    Also: adding 'fl-noface' in header and on Page 2 causes this error when
-    loading Page 2 with SSR: "Failed to execute 'define' on
-    'CustomElementRegistry': the name "fl-noface" has already been used with
-    this registry", which ImportMicroFrontends is apparently not able to prevent.
-    Find out why and fix it. 
-  -->
-  <ImportMicroFrontends tags={['fl-noface']} />
-</svelte:head>
 
 <header>
   <nav>
@@ -27,14 +9,16 @@
       <li class:active={$page.url.pathname === '/'}>
         <a data-sveltekit-preload-data href="/">Home</a>
       </li>
-      <li class:active={$page.url.pathname === '/page-1'}>
-        <a data-sveltekit-preload-data href="/page-1">Page 1</a>
+      <li class:active={$page.url.pathname === '/products'}>
+        <a data-sveltekit-preload-data href="/products">Products</a>
       </li>
-      <li class:active={$page.url.pathname === '/page-2'}>
-        <a data-sveltekit-preload-data href="/page-2">Page 2</a>
+      <li class:active={$page.url.pathname === '/another-page'}>
+        <a data-sveltekit-preload-data href="/another-page">Another Page</a>
       </li>
     </ul>
-    <fl-shopping-cart />
+    <div>
+      <MicroFrontend bundle="fl-noface" component={() => mf3App.ShoppingCart} />
+    </div>
   </nav>
 </header>
 
@@ -46,7 +30,6 @@
 
   nav {
     display: flex;
-    /* justify-content: center; */
     justify-content: space-between;
     flex-direction: row;
     width: 100%;

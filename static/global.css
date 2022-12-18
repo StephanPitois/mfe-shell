@@ -1,3 +1,20 @@
+/* Utilities */
+
+.flex-colum {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+}
+
 /* MFE Main Section */
 
 .mfeMain {
@@ -49,4 +66,31 @@
 
 .mfeCardAlt .mfeCardTitle {
     background: #efefef;
+}
+
+/* CARBON OVERRIDES */
+
+.bx--progress-bar__bar {
+    background-color: #b7a3d1;
+}
+
+.bx--progress-bar--indeterminate .bx--progress-bar__track::after {
+    background-image: linear-gradient(90deg, #b7a3d1 12.5%, transparent 12.5%);
+}
+
+.bx--btn--primary {
+    background-color: #673c9f;
+}
+
+.bx--btn--primary:hover {
+    background-color: #552b8b;
+}
+
+.bx--btn--primary:active {
+    background-color: #3f1b6e;
+}
+
+.bx--btn--primary:focus {
+    border-color: #552b8b;
+    box-shadow: inset 0 0 0 1px #552b8b, inset 0 0 0 2px #fff;
 }
