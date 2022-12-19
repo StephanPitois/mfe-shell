@@ -1,7 +1,8 @@
 <script>
   import { onMount } from 'svelte';
-  import { bundles } from '$lib/Bundles';
+  import { getStyleUrl, getScriptUrl } from '$lib/Bundles';
   import { ProgressBar } from 'carbon-components-svelte';
+  import { page } from '$app/stores';
 
   /**
    * @type {string}
@@ -17,11 +18,16 @@
   const styleId = `mfe-style-${bundle}`;
   const scriptId = `mfe-script-${bundle}`;
 
+  // @ts-ignore
+  const mfeData = $page.data.mfeData?.find((b) => b.name === bundle);
+  const script = mfeData?.script;
+  const style = mfeData?.style;
+
   let loaded = false;
 
   onMount(async () => {
-    const styleBundleUrl = bundles.get(bundle).replace('.js', '.css');
-    const scriptBundleUrl = bundles.get(bundle);
+    const styleBundleUrl = getStyleUrl(bundle);
+    const scriptBundleUrl = getScriptUrl(bundle);
     loadStyle(styleBundleUrl, styleId);
     loadScript(scriptBundleUrl, scriptId, () => {
       const componentConstructor = component();
@@ -31,27 +37,34 @@
   });
 
   /**
-     * @param {string} url
-     * @param {string} id
-     */
+   * @param {string} url
+   * @param {string} id
+   */
   function loadStyle(url, id) {
     if (document.querySelector(`#${id}`)) {
       console.log('Style already loaded');
       return;
     }
-    var link = document.createElement('link');
-    link.setAttribute('id', id);
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = url;
-    document.head.appendChild(link);
+    if (style) {
+      var styleElem = document.createElement('style');
+      styleElem.appendChild(document.createTextNode(style));
+      styleElem.setAttribute('id', id);
+      document.head.appendChild(styleElem);
+    } else {
+      var link = document.createElement('link');
+      link.type = 'text/css';
+      link.rel = 'stylesheet';
+      link.href = url;
+      link.setAttribute('id', id);
+      document.head.appendChild(link);
+    }
   }
 
   /**
-     * @param {string} url
-     * @param {string} id
-     * @param {Function} successCallback
-     */
+   * @param {string} url
+   * @param {string} id
+   * @param {Function} successCallback
+   */
   function loadScript(url, id, successCallback) {
     if (document.querySelector(`#${id}`)) {
       console.log('Script already loaded');
@@ -59,12 +72,8 @@
       return;
     }
     let scriptEle = document.createElement('script');
-    scriptEle.setAttribute('src', url);
     scriptEle.setAttribute('type', 'text/javascript');
-    scriptEle.setAttribute('async', 'false');
-    document.body.appendChild(scriptEle);
-    // success event
-    scriptEle.addEventListener('load', () => {
+    const success = () => {
       console.log('File loaded');
       // TODO: FIXME!
       // Way for the script to be loaded before setting the ID.
@@ -77,11 +86,26 @@
       // may be loaded more than once. That's not great at all.
       scriptEle.setAttribute('id', id);
       successCallback();
-    });
-    // error event
-    scriptEle.addEventListener('error', (ev) => {
-      console.log('Error on loading file', ev);
-    });
+    };
+    if (script) {
+      scriptEle.text = script;
+      // scriptEle.setAttribute('src', url);
+      scriptEle.setAttribute('async', 'false');
+      document.body.appendChild(scriptEle);
+      success();
+      // scriptEle.addEventListener('load', success);
+      // scriptEle.addEventListener('error', (ev) => {
+      //   console.log('Error on loading file', ev);
+      // });
+    } else {
+      scriptEle.setAttribute('src', url);
+      scriptEle.setAttribute('async', 'false');
+      document.body.appendChild(scriptEle);
+      scriptEle.addEventListener('load', success);
+      scriptEle.addEventListener('error', (ev) => {
+        console.log('Error on loading file', ev);
+      });
+    }
   }
 </script>
 
