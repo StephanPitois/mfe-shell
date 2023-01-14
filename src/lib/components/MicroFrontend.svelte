@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { getStyleUrl, getScriptUrl } from '$lib/Bundles';
-  import { ProgressBar } from 'carbon-components-svelte';
+  import Loading from '$lib/components/Loading.svelte';
   import { page } from '$app/stores';
 
   /**
@@ -89,14 +89,9 @@
     };
     if (script) {
       scriptEle.text = script;
-      // scriptEle.setAttribute('src', url);
       scriptEle.setAttribute('async', 'false');
       document.body.appendChild(scriptEle);
       success();
-      // scriptEle.addEventListener('load', success);
-      // scriptEle.addEventListener('error', (ev) => {
-      //   console.log('Error on loading file', ev);
-      // });
     } else {
       scriptEle.setAttribute('src', url);
       scriptEle.setAttribute('async', 'false');
@@ -110,7 +105,7 @@
 </script>
 
 {#if !loaded}
-  <ProgressBar helperText="Loading..." />
+  <Loading />
 {/if}
 
 <div {id} class:hidden={!loaded} />

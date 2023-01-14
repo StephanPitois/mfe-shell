@@ -4,7 +4,7 @@
 </svelte:head>
 
 <section class="flex flex-col gap-y-5 p-b5 pl-5 pr-20">
-  <h1>Micro-Frontend Demo</h1>
+  <h1 class="font-bold text-xl">Micro-Frontend Demo</h1>
   <p>
     A simple Svelte-based micro-frontend demo. Choose "Products" or "Another Page" from the navigation menu to
     see micro-frontends in action.
@@ -19,3 +19,10 @@
     micro-frontends use custom events to communicate with each other.
   </p>
 </section>
+
+<style>
+  /* section { */
+    /* https://github.com/unocss/unocss/tree/main/packages/transformer-directives */
+    /* @apply flex flex-col gap-y-5 pb-5 pl-5 pr-20; */
+  /* } */
+</style>

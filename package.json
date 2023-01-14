@@ -25,7 +25,6 @@
   "type": "module",
   "dependencies": {
     "cookie": "^0.4.1",
-    "unocss": "^0.47.6",
     "web-vitals": "^2.1.4"
   }
 }

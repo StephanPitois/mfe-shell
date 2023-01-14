@@ -19,6 +19,8 @@
 <style>
   .sidebar {
     grid-area: sidebar;
+    display: none;
+    width: 260px;
   }
 
   .header {
@@ -31,14 +33,35 @@
 
   .wrapper {
     display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 250px auto;
+    xxx-grid-gap: 20px;
+    row-gap: 20px;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 150px 1fr 99.5px;
     grid-template-areas:
       'header  header'
-      'sidebar content'
-      'footer  footer ';
+      'content content'
+      'footer  footer';
     background-color: #fff;
     color: #444;
+  }
+
+  @media (min-width: 900px) {
+    .wrapper {
+      column-gap: 20px;
+      grid-template-rows: 99.5px 1fr 99.5px;
+      grid-template-areas:
+        'header  header'
+        'sidebar content'
+        'footer  footer';
+      /* grid-template-columns: 1fr;
+      grid-template-areas:
+        'header'
+        'sidebar'
+        'footer'; */
+    }
+    .sidebar {
+      display: block;
+    }
   }
 
   .box {

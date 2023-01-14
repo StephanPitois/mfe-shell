@@ -32,6 +32,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
   }
 
@@ -44,11 +45,13 @@
     align-items: center;
     list-style: none;
     background-size: contain;
+    height: 39.5px;
   }
 
   li {
     position: relative;
     height: 100%;
+    white-space: nowrap;
   }
 
   li.active {
