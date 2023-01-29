@@ -1,3 +1,5 @@
+This repository was my first attempt at implementing micro-frontends with Svelte. That was before I learned that Module Federation is now possible with Svelte and Vite. I now recommend looking into Module Federation instead, as it is a more mature and standard solution. See https://github.com/module-federation/module-federation-examples/tree/master/vite-svelte-microfrontends
+
 # Micro-Frontends with Svelte
 
 This demo shows an app shell using Svelte Kit, which provides routing, a place to keep pages that must be server-side rendered, and a host
