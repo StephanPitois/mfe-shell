@@ -1,4 +1,6 @@
-This repository was my first attempt at implementing micro-frontends with Svelte. That was before I learned that Module Federation is now possible with Svelte and Vite. I now recommend looking into Module Federation instead, as it is a more mature and standard solution. See https://github.com/module-federation/module-federation-examples/tree/master/vite-svelte-microfrontends
+# January 2023 Update
+
+Look into https://github.com/module-federation/vite and compare pros and cons of Modular Federation vs this solution.
 
 # Micro-Frontends with Svelte
 
