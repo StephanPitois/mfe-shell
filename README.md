@@ -12,7 +12,7 @@ On the Products page, we have three micro-frontends from three different remotes
 an event is triggered. The shopping cart micro-frontends listens to that event, updates its count, and opens the shopping cart dialog in response. 
 This shows communication between two micro-frontends via simple events.
 
-![Screenshot](https://user-images.githubusercontent.com/1167497/208300819-93c30a0c-7401-4aec-a67a-8072486a7e2e.png)
+![Screenshot](https://user-images.githubusercontent.com/32743445/215668730-c8c022f7-e0ee-4e34-a81e-93a3e06cd2b3.png)
 
 ## Requirements
 
@@ -82,6 +82,13 @@ Create new helper, `dispatchCustomEvent` to simplify and standardize this kind o
 			})
 		);
 ```
+
+## Teach Stack
+
+- [SvelteKit](https://kit.svelte.dev/)/[Vite](https://vitejs.dev/): App Shell/Host App
+- [Svelte](https://svelte.dev/)/[Rollup](https://github.com/sveltejs/rollup-plugin-svelte): Micro-Frontends/Remote Apps 
+- [Pico.css](https://picocss.com/)
+- [unocss](https://github.com/unocss/unocss/tree/main/packages/runtime)
 
 ---
 
