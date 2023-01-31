@@ -33,6 +33,21 @@ body>main {
     border-color: var(--primary);
 }
 
+.mfeCard_before {
+    display: none;
+}
+
+.inspect .mfeCard_before {
+    display: block;
+    position: absolute;
+    transform: translate(1rem, -21px);
+    background: #f3e5f5;
+    border-radius: 3px;
+    padding: 0 6px;
+    font-size: small;
+    color: #424242;
+}
+
 @media (min-width: 768px) {
     .grid {
         grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));

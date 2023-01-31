@@ -104,7 +104,12 @@
 </script>
 
 {#if !loaded}
-  <article aria-busy="true"></article>
+  <article aria-busy="true" />
 {/if}
 
-<div {id} class:hidden={!loaded} />
+<div class:hidden={!loaded}>
+  <div class="mfeCard_before">
+    {component.toString().replace('()', '').replace('=>', '').trim()}
+  </div>
+  <div {id} class="mfeCard" />
+</div>
