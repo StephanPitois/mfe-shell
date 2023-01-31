@@ -12,12 +12,16 @@ body>main {
     padding-bottom: 1rem;
 }
 
-/* :root {
+:root {
     --form-element-spacing-vertical: 0.75rem;
     --form-element-spacing-horizontal: 1rem;
     --form-element-spacing-vertical: 0.25rem;
     --form-element-spacing-horizontal: .5rem;
-} */
+}
+
+:root {
+    --font-size: 16px;
+}
 
 .inspect .mfeCard {
     border: 5px dashed var(--primary);
