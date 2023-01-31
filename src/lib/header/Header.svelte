@@ -21,7 +21,9 @@
       </li>
     </ul>
     <ul class="gap-5">
-      <RemoteModule remote="remote-app-3" component={()=> remote_app_3.ShoppingCart} />
+      <li>
+        <RemoteModule remote="remote-app-3" component={()=> remote_app_3.ShoppingCart} />
+      </li>
     </ul>
   </nav>
 </header>
