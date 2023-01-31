@@ -1,74 +1,38 @@
 <script>
   import { page } from '$app/stores';
-  import MicroFrontend from '$lib/components/MicroFrontend.svelte';
+  import RemoteModule from '$lib/micro-frontends/RemoteModule.svelte';
+  import { inspect } from '$lib/stores.js';
 </script>
 
-<header>
+<header class:inspect={$inspect}>
   <nav>
-    <ul>
-      <li class:active={$page.url.pathname === '/'}>
+    <ul class="gap-5">
+      <li class:active={$page.url.pathname==='/' }>
         <a data-sveltekit-preload-data href="/">Home</a>
       </li>
-      <li class:active={$page.url.pathname === '/products'}>
+      <li class:active={$page.url.pathname==='/products' }>
         <a data-sveltekit-preload-data href="/products">Products</a>
       </li>
-      <li class:active={$page.url.pathname === '/another-page'}>
-        <a data-sveltekit-preload-data href="/another-page">Another Page</a>
+      <li>
+        <label for="switch" title="Highlight remote components with a border">
+          <input type="checkbox" id="switch" name="switch" role="switch" bind:checked={$inspect}>
+          Highlight
+        </label>
       </li>
     </ul>
-    <div>
-      <MicroFrontend bundle="fl-noface" component={() => mf3App.ShoppingCart} />
-    </div>
+    <ul class="gap-5">
+      <RemoteModule remote="remote-app-3" component={()=> remote_app_3.ShoppingCart} />
+    </ul>
   </nav>
 </header>
 
 <style>
-  header {
-    display: flex;
-    justify-content: space-between;
+  li a {
+    font-weight: bold;
   }
 
-  nav {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  ul {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    background-size: contain;
-    height: 39.5px;
-  }
-
-  li {
-    position: relative;
-    height: 100%;
-    white-space: nowrap;
-  }
-
-  li.active {
-    text-decoration: underline;
-  }
-
-  nav a {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    padding: 0 2em 0 0;
-    color: var(--heading-color);
-    text-decoration: none;
-    transition: color 0.2s linear;
-  }
-
-  a:hover {
-    color: var(--accent-color);
+  li.active a {
+    border-bottom: 2px solid var(--primary);
+    border-radius: 0;
   }
 </style>

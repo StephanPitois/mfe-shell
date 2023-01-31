@@ -1,13 +1,12 @@
 <script>
   import { onMount } from 'svelte';
-  import { getStyleUrl, getScriptUrl } from '$lib/Bundles';
-  import Loading from '$lib/components/Loading.svelte';
+  import { getStyleUrl, getScriptUrl } from '$lib/micro-frontends/Remotes';
   import { page } from '$app/stores';
 
   /**
    * @type {string}
    */
-  export let bundle;
+  export let remote;
 
   /**
    * @type {Function}
@@ -15,21 +14,21 @@
   export let component;
 
   const id = `mfe-${crypto.randomUUID()}`;
-  const styleId = `mfe-style-${bundle}`;
-  const scriptId = `mfe-script-${bundle}`;
+  const styleId = `mfe-style-${remote}`;
+  const scriptId = `mfe-script-${remote}`;
 
   // @ts-ignore
-  const mfeData = $page.data.mfeData?.find((b) => b.name === bundle);
+  const mfeData = $page.data.mfeData?.find((b) => b.name === remote);
   const script = mfeData?.script;
   const style = mfeData?.style;
 
   let loaded = false;
 
   onMount(async () => {
-    const styleBundleUrl = getStyleUrl(bundle);
-    const scriptBundleUrl = getScriptUrl(bundle);
-    loadStyle(styleBundleUrl, styleId);
-    loadScript(scriptBundleUrl, scriptId, () => {
+    const styleRemoteUrl = getStyleUrl(remote);
+    const scriptRemoteUrl = getScriptUrl(remote);
+    loadStyle(styleRemoteUrl, styleId);
+    loadScript(scriptRemoteUrl, scriptId, () => {
       const componentConstructor = component();
       new componentConstructor({ target: document.querySelector(`#${id}`) });
       loaded = true;
@@ -78,7 +77,7 @@
       // TODO: FIXME!
       // Way for the script to be loaded before setting the ID.
       // It's not great but at least you can load more than one
-      // component from the same bundle on a single page.
+      // component from the same remote on a single page.
       // Need to fix this though. Need to have all listeners
       // triggered once loaded - not just one listener,
       // and not too early either.
@@ -105,7 +104,7 @@
 </script>
 
 {#if !loaded}
-  <Loading />
+  <article aria-busy="true"></article>
 {/if}
 
 <div {id} class:hidden={!loaded} />

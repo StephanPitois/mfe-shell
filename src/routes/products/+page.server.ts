@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-// import { getData } from '$lib/Bundles';
+// import { getData } from '$lib/Remotes';
 
 export const load = (async ({ params }) => {
     return {
@@ -12,7 +12,7 @@ export const load = (async ({ params }) => {
         // burden of fetching these files from the browser to
         // the server.
         // ----------------------------------------------------
-        // mfeData: await getData(['fl-totoro', 'fl-catbus'])
+        // mfeData: await getData(['remote_app_1', 'remote_app_2'])
     };
 }) satisfies PageServerLoad;
 

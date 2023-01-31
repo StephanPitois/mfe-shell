@@ -1,13 +1,13 @@
 <script>
-  import MicroFrontend from '$lib/components/MicroFrontend.svelte';
+  import RemoteModule from '$lib/micro-frontends/RemoteModule.svelte';
 </script>
 
 <svelte:head>
-  <title>Page 1 - MFE Demo</title>
-  <meta name="description" content="Page 1 - MFE demo app" />
+  <title>Products - MFE Demo</title>
+  <meta name="description" content="Products - MFE Demo" />
 </svelte:head>
 
 <div class="flex flex-col gap-5">
-  <MicroFrontend bundle="fl-totoro" component={() => mf1App.Totoro} />
-  <MicroFrontend bundle="fl-catbus" component={() => mf2App.Catbus} />
+  <RemoteModule remote="remote-app-1" component={()=> remote_app_1.Products} />
+  <RemoteModule remote="remote-app-2" component={()=> remote_app_2.MFE2} />
 </div>

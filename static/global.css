@@ -1,108 +1,43 @@
-/* Basics */
-
-body {
-    max-width: 1600px;
-    margin: 0 auto !important;
+:root:not([data-theme=dark]),
+[data-theme=light] {
+    --primary: #8e24aa;
+    --primary-hover: rgb(104, 26, 126);
 }
 
-/* Utilities */
+body>footer,
+body>header,
+body>main {
+    padding: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* :root {
+    --form-element-spacing-vertical: 0.75rem;
+    --form-element-spacing-horizontal: 1rem;
+    --form-element-spacing-vertical: 0.25rem;
+    --form-element-spacing-horizontal: .5rem;
+} */
+
+.inspect .mfeCard {
+    border: 5px dashed var(--primary);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+    }
+}
+
+.truncate {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
 .hidden {
     display: none;
 }
-
-.flex-colum {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 25px;
-
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-/* MFE Main Section */
-
-.mfeMain {
-    /* background: #e1d5e7; */
-    background: #eeeeee;
-    color: #333;
-    padding: 25px;
-    position: relative;
-    border: 5px dashed transparent;
-}
-
-.mfeMainH1 {
-    font-size: 200%;
-    margin: 0 0 35px 0;
-}
-
-.mfeMainImg {
-    height: 100px;
-    /* margin-bottom: 25px; */
-    border-radius: 5px;
-}
-
-.mfeMainP {
-    background: #b7a3d1;
-    padding: 25px;
-    border-radius: 5px;
-    margin-top: 0;
-    font-size: small;
-}
-
-.mfeCard {
-    border: 5px dashed #b7a3d1;
-    font-size: small;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.mfeCardTitle {
-    background: #b7a3d1;
-    color: #333;
-    display: block;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    padding: 3px 6px;
-}
-
-.mfeCardAlt {
-    border: 1px solid #efefef;
-}
-
-.mfeCardAlt .mfeCardTitle {
-    background: #efefef;
-}
-
-/* CARBON OVERRIDES */
-
-.bx--progress-bar__bar {
-    background-color: #b7a3d1;
-}
-
-.bx--progress-bar--indeterminate .bx--progress-bar__track::after {
-    background-image: linear-gradient(90deg, #b7a3d1 12.5%, transparent 12.5%);
-}
-
-.bx--btn--primary {
-    background-color: #673c9f;
-}
-
-.bx--btn--primary:hover {
-    background-color: #552b8b;
-}
-
-.bx--btn--primary:active {
-    background-color: #3f1b6e;
-}
-
-.bx--btn--primary:focus {
-    border-color: #552b8b;
-    box-shadow: inset 0 0 0 1px #552b8b, inset 0 0 0 2px #fff;
-} 
