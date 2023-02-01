@@ -4,9 +4,9 @@
     --primary-hover: rgb(104, 26, 126);
 }
 
-body>footer,
-body>header,
-body>main {
+body>div>footer,
+body>div>header,
+body>div>main {
     padding: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;

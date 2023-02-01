@@ -1,28 +1,30 @@
 <script>
+  // @ts-nocheck
   import { page } from '$app/stores';
   import RemoteModule from '$lib/micro-frontends/RemoteModule.svelte';
   import { inspect } from '$lib/stores.js';
 </script>
 
-<header class:inspect={$inspect}>
+<header class:inspect={$inspect} class="container">
   <nav>
     <ul class="gap-5">
-      <li class:active={$page.url.pathname==='/' }>
+      <li class:active={$page.url.pathname === '/'}>
         <a data-sveltekit-preload-data href="/">Home</a>
       </li>
-      <li class:active={$page.url.pathname==='/products' }>
+      <li class:active={$page.url.pathname === '/products'}>
         <a data-sveltekit-preload-data href="/products">Products</a>
       </li>
       <li>
         <label for="switch" title="Highlight remote components with a border">
-          <input type="checkbox" id="switch" name="switch" role="switch" bind:checked={$inspect}>
+          <input type="checkbox" id="switch" name="switch" role="switch" bind:checked={$inspect} />
           Highlight
         </label>
       </li>
     </ul>
     <ul class="gap-5">
       <li>
-        <RemoteModule remote="remote-app-3" component={()=> remote_app_3.ShoppingCart} />
+        <!-- svelte-ignore missing-declaration -->
+        <RemoteModule remote="remote-app-3" component={() => remote_app_3.ShoppingCart} />
       </li>
     </ul>
   </nav>

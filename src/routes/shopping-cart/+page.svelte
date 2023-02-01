@@ -1,4 +1,5 @@
 <script>
+  // @ts-nocheck
   import RemoteModule from '$lib/micro-frontends/RemoteModule.svelte';
 </script>
 
@@ -7,4 +8,5 @@
   <meta name="description" content="Shopping Cart - MFE Demo" />
 </svelte:head>
 
+<!-- svelte-ignore missing-declaration -->
 <RemoteModule remote="remote-app-3" component={() => remote_app_3.ShoppingCartDetails} />

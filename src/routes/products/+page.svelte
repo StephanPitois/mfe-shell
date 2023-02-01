@@ -1,4 +1,5 @@
 <script>
+  // @ts-nocheck
   import RemoteModule from '$lib/micro-frontends/RemoteModule.svelte';
 </script>
 
@@ -8,6 +9,8 @@
 </svelte:head>
 
 <div class="flex flex-col gap-10">
-  <RemoteModule remote="remote-app-1" component={()=> remote_app_1.Products} />
-  <RemoteModule remote="remote-app-2" component={()=> remote_app_2.MFE2} />
+  <!-- svelte-ignore missing-declaration -->
+  <RemoteModule remote="remote-app-1" component={() => remote_app_1.Products} />
+  <!-- svelte-ignore missing-declaration -->
+  <RemoteModule remote="remote-app-2" component={() => remote_app_2.MFE2} />
 </div>
