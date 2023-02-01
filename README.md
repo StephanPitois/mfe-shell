@@ -12,7 +12,7 @@ On the Products page, we have three micro-frontends from three different remotes
 an event is triggered. The shopping cart micro-frontends listens to that event, updates its count, and opens the shopping cart dialog in response. 
 This shows communication between two micro-frontends via simple events.
 
-![Screenshot](https://user-images.githubusercontent.com/32743445/215668730-c8c022f7-e0ee-4e34-a81e-93a3e06cd2b3.png)
+![Screenshot](https://user-images.githubusercontent.com/1167497/216043828-ab622247-7b91-4141-8891-c3f2485d71bf.png)
 
 ## Requirements
 
