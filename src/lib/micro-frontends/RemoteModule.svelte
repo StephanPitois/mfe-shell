@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { PUBLIC_MFE_1, PUBLIC_MFE_2, PUBLIC_MFE_3 } from '$env/static/public';
   import { loadedScripts, loadScriptQueue } from '$lib/micro-frontends/stores';
+  import Loader from '$lib/Loader.svelte';
 
   /**
    * @type {string}
@@ -43,7 +44,7 @@
   function loadStyle(url, id) {
     // Already loaded?
     if (document.querySelector(`#${id}`)) {
-      return; 
+      return;
     }
     // Load script
     const elem = document.createElement('link');
@@ -93,7 +94,9 @@
 {#if !loaded}
   <!-- Comment out to see impact on Google Lighthouse Cumulative Layout Shift metric -->
   <!-- <article aria-busy="true" /> -->
+  <Loader />
 {/if}
+<!-- <Loader /> -->
 
 <div class:hidden={!loaded}>
   <div class="mfeCard_before">
