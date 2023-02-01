@@ -92,11 +92,8 @@
 </script>
 
 {#if !loaded}
-  <!-- Comment out to see impact on Google Lighthouse Cumulative Layout Shift metric -->
-  <!-- <article aria-busy="true" /> -->
   <Loader />
 {/if}
-<!-- <Loader /> -->
 
 <div class:hidden={!loaded}>
   <div class="mfeCard_before">
