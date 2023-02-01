@@ -91,7 +91,8 @@
 </script>
 
 {#if !loaded}
-  <article aria-busy="true" />
+  <!-- Comment out to see impact on Google Lighthouse Cumulative Layout Shift metric -->
+  <!-- <article aria-busy="true" /> -->
 {/if}
 
 <div class:hidden={!loaded}>
