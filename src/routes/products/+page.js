@@ -1,1 +1,1 @@
-export const ssr = true; // page.js can be deleted because true = default
+export const ssr = false;
