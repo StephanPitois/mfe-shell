@@ -1,3 +1,5 @@
+<!-- TODO: do better than just displaying "Loading..." -->
+
 <div class="loader"><div>Loading...</div></div>
 
 <style>
@@ -8,7 +10,7 @@
     bottom: 0;
     left: 0;
     z-index: 10000;
-    background: #eee;
+    background: #fff;
     color: #333;
     display: flex;
     align-items: center;
