@@ -23,6 +23,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@picocss/pico": "^1.5.7",
     "cookie": "^0.4.1",
     "web-vitals": "^2.1.4"
   }
