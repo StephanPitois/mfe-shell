@@ -1,6 +1,4 @@
-<!-- TODO: do better than just displaying "Loading..." -->
-
-<div class="loader"><div>Loading...</div></div>
+<div class="loader" aria-busy="true"><div>Loading...</div></div>
 
 <style>
   .loader {
@@ -15,5 +13,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .loader > div {
+    color: #999;
   }
 </style>

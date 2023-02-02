@@ -8,7 +8,7 @@
   <meta name="description" content="Products - MFE Demo" />
 </svelte:head>
 
-<div class="flex flex-col gap-10">
+<div class="gap-10">
   <!-- svelte-ignore missing-declaration -->
   <RemoteModule remote="remote-app-1" component={() => remote_app_1.Products} />
   <!-- svelte-ignore missing-declaration -->

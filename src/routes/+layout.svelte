@@ -9,7 +9,7 @@
   $loaders++;
 
   onMount(async () => {
-      $loaders--;
+    $loaders--;
   });
 </script>
 
@@ -21,9 +21,12 @@
 <main class:inspect={$inspect} class="container">
   <slot />
 </main>
-<footer class="container text-center p-10 pb-30">
+<footer class="container flex flex-row justify-center">
   <a href="https://github.com/StephanPitois/mfe-shell">GitHub</a>
 </footer>
 
 <style>
+  footer {
+    margin-bottom: 2.5rem;
+  }
 </style>
