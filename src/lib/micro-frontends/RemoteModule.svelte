@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
   import { PUBLIC_MFE_1, PUBLIC_MFE_2, PUBLIC_MFE_3 } from '$env/static/public';
   import { loadedScripts, loadScriptQueue } from '$lib/micro-frontends/stores';
-  import Loader from '$lib/Loader.svelte';
   import { loaders } from '$lib/micro-frontends/stores';
 
   /**
@@ -93,10 +92,6 @@
     document.body.appendChild(elem);
   }
 </script>
-
-<!-- {#if !loaded}
-  <Loader />
-{/if} -->
 
 <div class:hidden={!loaded}>
   <div class="mfeCard_before">
