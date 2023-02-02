@@ -3,6 +3,7 @@
   import { PUBLIC_MFE_1, PUBLIC_MFE_2, PUBLIC_MFE_3 } from '$env/static/public';
   import { loadedScripts, loadScriptQueue } from '$lib/micro-frontends/stores';
   import Loader from '$lib/Loader.svelte';
+  import { loaders } from '$lib/micro-frontends/stores';
 
   /**
    * @type {string}
@@ -25,6 +26,7 @@
   const scriptId = `mfe-script-${remote}`;
 
   let loaded = false;
+  $loaders++;
 
   onMount(async () => {
     const styleRemoteUrl = remotes.get(remote).replace('.js', '.css');
@@ -34,6 +36,7 @@
       const componentConstructor = component();
       new componentConstructor({ target: document.querySelector(`#${id}`) });
       loaded = true;
+      $loaders--;
     });
   });
 
@@ -91,9 +94,9 @@
   }
 </script>
 
-{#if !loaded}
+<!-- {#if !loaded}
   <Loader />
-{/if}
+{/if} -->
 
 <div class:hidden={!loaded}>
   <div class="mfeCard_before">

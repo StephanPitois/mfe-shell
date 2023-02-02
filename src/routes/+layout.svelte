@@ -4,17 +4,24 @@
   import { inspect } from '$lib/stores.js';
   import { onMount } from 'svelte';
   import Loader from '$lib/Loader.svelte';
+  import { loaders } from '$lib/micro-frontends/stores';
 
   let loaded = false;
+  $loaders++;
 
   onMount(async () => {
       loaded = true;
+      $loaders--;
   });
 </script>
 
-{#if !loaded}
+{#if $loaders}
   <Loader />
 {/if}
+
+<!-- {#if !loaded}
+  <Loader />
+{/if} -->
 
 <Header />
 <main class:inspect={$inspect} class="container">
