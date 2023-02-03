@@ -6,8 +6,8 @@
 <section>
   <h1>Micro-Frontend Demo</h1>
   <p>
-    A simple Svelte-based micro-frontend demo. Choose "Products" or "Another Page" from the navigation menu to
-    see micro-frontends in action.
+    A simple Svelte-based micro-frontend demo. Choose "Products" or "Another Page" from the
+    navigation menu to see micro-frontends in action.
   </p>
   <p>
     <strong>Store boundaries</strong>: the app shell cannot access a micro-frontend store, and
@@ -19,3 +19,11 @@
     micro-frontends use custom events to communicate with each other.
   </p>
 </section>
+
+<style>
+  section {
+    border: 0.25rem solid transparent;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+</style>
