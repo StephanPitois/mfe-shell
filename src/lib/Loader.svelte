@@ -8,7 +8,7 @@
     bottom: 0;
     left: 0;
     z-index: 10000;
-    background: #fff;
+    background: var(--background-color);
     color: #333;
     display: flex;
     align-items: center;
