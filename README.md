@@ -1,7 +1,3 @@
-# January 2023 Update
-
-Look into https://github.com/module-federation/vite and compare pros and cons of Modular Federation vs this solution.
-
 # Micro-Frontends with Svelte
 
 This demo shows an app shell using Svelte Kit, which provides routing, a place to keep pages that must be server-side rendered, and a host
@@ -83,12 +79,19 @@ Create new helper, `dispatchCustomEvent` to simplify and standardize this kind o
 		);
 ```
 
-## Teach Stack
+## Tech Stack
 
 - [SvelteKit](https://kit.svelte.dev/)/[Vite](https://vitejs.dev/): App Shell/Host App
 - [Svelte](https://svelte.dev/)/[Rollup](https://github.com/sveltejs/rollup-plugin-svelte): Micro-Frontends/Remote Apps 
 - [Pico.css](https://picocss.com/)
 - [unocss](https://github.com/unocss/unocss/tree/main/packages/runtime)
+
+## Alternatives
+
+- Single SPA
+- Module Federation
+- Combination of both
+- Server-side composition and SSR
 
 ---
 
