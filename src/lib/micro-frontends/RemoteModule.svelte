@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { PUBLIC_MFE_1, PUBLIC_MFE_2, PUBLIC_MFE_3 } from '$env/static/public';
+  import { PUBLIC_REMOTE_APPS } from '$env/static/public';
   import { loadedScripts, loadScriptQueue } from '$lib/micro-frontends/stores';
   import { loaders } from '$lib/micro-frontends/stores';
 
@@ -14,11 +14,9 @@
    */
   export let component;
 
-  // TODO: Move to config file
-  const remotes = new Map();
-  remotes.set('remote-app-1', PUBLIC_MFE_1 || 'http://localhost:1971/build/bundle.js');
-  remotes.set('remote-app-2', PUBLIC_MFE_2 || 'http://localhost:1972/build/bundle.js');
-  remotes.set('remote-app-3', PUBLIC_MFE_3 || 'http://localhost:1973/build/bundle.js');
+  const remotes = JSON.parse(PUBLIC_REMOTE_APPS);
+  const scriptRemoteUrl = remotes[remote];
+  const styleRemoteUrl = scriptRemoteUrl.replace('.js', '.css');
 
   const id = `mfe-${crypto.randomUUID()}`;
   const styleId = `mfe-style-${remote}`;
@@ -28,8 +26,6 @@
   $loaders++;
 
   onMount(async () => {
-    const styleRemoteUrl = remotes.get(remote).replace('.js', '.css');
-    const scriptRemoteUrl = remotes.get(remote);
     loadStyle(styleRemoteUrl, styleId);
     loadScript(scriptRemoteUrl, scriptId, () => {
       const componentConstructor = component();

@@ -21,12 +21,7 @@ This shows communication between two micro-frontends via simple events.
 Add a `.env` file to your project with this content:
 
 ```
-PUBLIC_MFE_1=http://localhost:1971/build/bundle.js
-PUBLIC_MFE_2=http://localhost:1972/build/bundle.js
-PUBLIC_MFE_3=http://localhost:1973/build/bundle.js
-# PUBLIC_MFE_1=https://mfe-1-psi.vercel.app/build/bundle.js
-# PUBLIC_MFE_2=https://mfe-2.vercel.app/build/bundle.js
-# PUBLIC_MFE_3=https://mfe-3.vercel.app/build/bundle.js
+PUBLIC_REMOTE_APPS='{"remote-app-1": "http://localhost:1971/build/bundle.js", "remote-app-2": "http://localhost:1972/build/bundle.js", "remote-app-3": "http://localhost:1973/build/bundle.js"}'
 ```
 
 For production, these will need to be configured in your deployment pipeline
@@ -39,9 +34,7 @@ You can use those locally too. For example, if you are working on the app shell 
 micro-frontends locally, change your local `.env` to this:
 
 ```
-PUBLIC_MFE_1=https://mfe-1-psi.vercel.app/build/bundle.js
-PUBLIC_MFE_2=https://mfe-2.vercel.app/build/bundle.js
-PUBLIC_MFE_3=https://mfe-3.vercel.app/build/bundle.js
+PUBLIC_REMOTE_APPS='{"remote-app-1": "https://mfe-1-psi.vercel.app/build/bundle.js", "remote-app-2": "https://mfe-2.vercel.app/build/bundle.js", "remote-app-3": "https://mfe-3.vercel.app/build/bundle.js"}'
 ```
 
 Similarly, when working on a specific micro-frontends locally, the preferred setup is to just have the app shell and the targeted micro-frontend
@@ -50,9 +43,7 @@ focused on your development machine, but having only one local micro-frontend al
 to good devloper experience. For example, if you want to develop MFE2, your config would look like this:
 
 ```
-PUBLIC_MFE_1=https://mfe-1-psi.vercel.app/build/bundle.js
-PUBLIC_MFE_2=http://localhost:1972/build/bundle.js
-PUBLIC_MFE_3=https://mfe-3.vercel.app/build/bundle.js
+PUBLIC_REMOTE_APPS='{"remote-app-1": "https://mfe-1-psi.vercel.app/build/bundle.js", "remote-app-2": "http://localhost:1972/build/bundle.js", "remote-app-3": "https://mfe-3.vercel.app/build/bundle.js"}'
 ```
 
 ## Tech Stack
