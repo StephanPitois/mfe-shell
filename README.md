@@ -1,23 +1,14 @@
 # Micro-Frontends with Svelte
 
-This demo shows an app shell using Svelte Kit, which provides routing, a place to keep pages that must be server-side rendered, and a host
-for micro-frontends. The micro-frontends are simple Svelte apps, coded and deployed independently from the app shell and from each other. 
+This demo shows an app shell using Svelte Kit (+ Vite), which provides routing, a place to keep pages that must be server-side rendered, and a host
+for micro-frontends. The micro-frontends are simple Svelte apps (+ Rollup), coded and deployed independently from the app shell and from each other. 
 In this implmentation, the micro-frontends have no server-rendering capabilities as the remotes are loaded dynamically on the client-side only.
 
 On the Products page, we have three micro-frontends from three different remotes. When items are added to the cart from the product micro-frontend,
 an event is triggered. The shopping cart micro-frontends listens to that event, updates its count, and opens the shopping cart dialog in response. 
 This shows communication between two micro-frontends via simple events.
 
-![Screenshot](https://user-images.githubusercontent.com/1167497/216043828-ab622247-7b91-4141-8891-c3f2485d71bf.png)
-
-## Requirements
-
-- COMPILE APP TO COMPONENT PUBLISHED TO CDN AND CONSUMABLE VIA LINK TAG 
-- ONE COMPONENT OR MORE PER TEAM 
-- APP SHELL ONLY IMPORTS WHAT IT NEEDS
-- EACH TEAM CONTROLS DEPLOYMENT OF REMOTES
-- ~~SSR SHOULD WORK~~ CUSTOM ELEMENTS ONLY EXIST CLIENT SIDE, BUT NOT AN ISSUE IF SSR NOT NEEDED
-- STILL USE SVELTE KIT FOR APP SHELL
+![image](https://user-images.githubusercontent.com/1167497/216772063-62e5822a-303c-4c81-b77d-867252aedfd3.png)
 
 ## Shell App For Micro-Frontends
 
@@ -61,32 +52,14 @@ PUBLIC_MFE_2=http://localhost:1972/build/bundle.js
 PUBLIC_MFE_3=https://mfe-3.vercel.app/build/bundle.js
 ```
 
-In a production-ready version of this app, we could use a micro-frontend discovery service to help keep
-things decoupled and manageable.
-
-## Notes
-
-TODO:
-
-Create new helper, `dispatchCustomEvent` to simplify and standardize this kind of call - naming, payload, etc...:
-
-```
-		// Use this to communicate with other micro-frontends:
-		window.dispatchEvent(
-			new CustomEvent("TOTORO_WAS_CLICKED", {
-				detail: { message: "Totoro's first component was clicked." },
-			})
-		);
-```
-
 ## Tech Stack
 
 - [SvelteKit](https://kit.svelte.dev/)/[Vite](https://vitejs.dev/): App Shell/Host App
 - [Svelte](https://svelte.dev/)/[Rollup](https://github.com/sveltejs/rollup-plugin-svelte): Micro-Frontends/Remote Apps 
 - [Pico.css](https://picocss.com/)
-- [unocss](https://github.com/unocss/unocss/tree/main/packages/runtime)
+- [~unocss~](https://github.com/unocss/unocss/tree/main/packages/runtime)
 
-## Alternatives
+## Alternatives & Possible Improvements
 
 - Single SPA
 - Module Federation
