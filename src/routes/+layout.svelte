@@ -17,16 +17,22 @@
   <Loader />
 {/if}
 
-<Header />
-<main class:inspect={$inspect} class="container">
-  <slot />
-</main>
-<footer class="container flex flex-row justify-center">
-  <a href="https://github.com/StephanPitois/mfe-shell">GitHub</a>
-</footer>
+<div class="wrapper gap-10">
+  <Header />
+  <main class:inspect={$inspect} class="container">
+    <slot />
+  </main>
+  <footer class="container flex flex-row justify-center">
+    <a href="https://github.com/StephanPitois/mfe-shell">GitHub</a>
+  </footer>
+</div>
 
 <style>
-  footer {
+  .wrapper {
+    margin-top: 1rem;
     margin-bottom: 2.5rem;
+  }
+  footer {
+    padding: 2.5rem;
   }
 </style>

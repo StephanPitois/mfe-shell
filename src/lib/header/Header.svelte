@@ -34,7 +34,6 @@
   li a {
     font-weight: bold;
   }
-
   li.active a {
     border-bottom: 2px solid var(--primary);
     border-radius: 0;

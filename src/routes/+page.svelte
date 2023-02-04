@@ -21,7 +21,7 @@
 
 <style>
   section {
-    border: 0.25rem solid transparent;
+    border: 1px solid transparent;
     padding: 1rem;
     border-radius: 1rem;
   }
