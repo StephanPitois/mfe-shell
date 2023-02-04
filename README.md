@@ -24,6 +24,9 @@ Add a `.env` file to your project with this content:
 PUBLIC_MFE_1=http://localhost:1971/build/bundle.js
 PUBLIC_MFE_2=http://localhost:1972/build/bundle.js
 PUBLIC_MFE_3=http://localhost:1973/build/bundle.js
+# PUBLIC_MFE_1=https://mfe-1-psi.vercel.app/build/bundle.js
+# PUBLIC_MFE_2=https://mfe-2.vercel.app/build/bundle.js
+# PUBLIC_MFE_3=https://mfe-3.vercel.app/build/bundle.js
 ```
 
 For production, these will need to be configured in your deployment pipeline
