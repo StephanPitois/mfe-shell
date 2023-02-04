@@ -26,9 +26,7 @@ PUBLIC_REMOTE_APPS='{"remote-app-1": "http://localhost:1971/build/bundle.js", "r
 
 For production, these will need to be configured in your deployment pipeline
 to reflect the deployed URLs of your micro-frontends, i.e., the path to each
-`bundle.js`. For this demo deployed with Vercel, you would set the environment variables from your console:
-
-![image](https://user-images.githubusercontent.com/1167497/208299703-999e67ea-76ec-43cd-bcdd-6b6b0b58b14f.png)
+`bundle.js`. 
 
 You can use those locally too. For example, if you are working on the app shell and don't want to run all
 micro-frontends locally, change your local `.env` to this:
