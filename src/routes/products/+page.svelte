@@ -12,5 +12,5 @@
   <!-- svelte-ignore missing-declaration -->
   <RemoteModule remote="remote-app-1" component={() => remote_app_1.Products} />
   <!-- svelte-ignore missing-declaration -->
-  <RemoteModule remote="remote-app-2" component={() => remote_app_2.MFE2} />
+  <!-- <RemoteModule remote="remote-app-2" component={() => remote_app_2.MFE2} /> -->
 </div>

@@ -5,7 +5,7 @@
   import { inspect } from '$lib/stores.js';
 </script>
 
-<header class:inspect={$inspect} class="container">
+<header class="container">
   <nav>
     <ul class="gap-5">
       <li class:active={$page.url.pathname === '/'}>

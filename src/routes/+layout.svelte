@@ -17,9 +17,9 @@
   <Loader />
 {/if}
 
-<div class="wrapper gap-10">
+<div class="wrapper gap-10" class:inspect={$inspect}>
   <Header />
-  <main class:inspect={$inspect} class="container">
+  <main class="container">
     <slot />
   </main>
   <footer class="container flex flex-row justify-center">
