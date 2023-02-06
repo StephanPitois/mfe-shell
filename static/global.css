@@ -74,6 +74,10 @@
     justify-content: flex-start;
 }
 
+.justify-end {
+    justify-content: flex-end;
+}
+
 .justify-center {
     justify-content: center;
 }
@@ -96,6 +100,10 @@
 
 .w-full {
     width: 100%;
+}
+
+.w-1\/2 {
+    width: 50%;
 }
 
 .w-1\/3 {
@@ -138,6 +146,10 @@
         width: 100%;
     }
 
+    .lg\:w-1\/2 {
+        width: 50%;
+    }
+
     .lg\:w-1\/3 {
         width: 33.33%;
     }
@@ -175,4 +187,8 @@ div.no-flex {
 
 nav {
     flex-wrap: wrap;
+}
+
+.w-auto {
+    width: auto;
 }

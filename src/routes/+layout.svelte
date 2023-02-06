@@ -22,7 +22,7 @@
   <main class="container">
     <slot />
   </main>
-  <footer class="container flex flex-row justify-center">
+  <footer class="container flex flex-row justify-end">
     <a href="https://github.com/StephanPitois/mfe-shell">GitHub</a>
   </footer>
 </div>
@@ -33,6 +33,7 @@
     margin-bottom: 2.5rem;
   }
   footer {
-    padding: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 </style>
