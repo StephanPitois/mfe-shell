@@ -15,6 +15,9 @@
         <a data-sveltekit-preload-data href="/products">Products</a>
       </li>
       <li>
+        <a style="font-weight: normal" href="https://github.com/StephanPitois/mfe-shell">➝ GitHub</a>
+      </li>
+      <li>
         <label for="switch" title="Highlight remote components with a border">
           <input type="checkbox" id="switch" name="switch" role="switch" bind:checked={$inspect} />
           Highlight
@@ -33,9 +36,10 @@
 <style>
   li a {
     font-weight: bold;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
   }
   li.active a {
-    border-bottom: 2px solid var(--primary);
-    border-radius: 0;
+    border-color: var(--primary);
   }
 </style>

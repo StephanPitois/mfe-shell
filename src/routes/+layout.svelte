@@ -23,7 +23,7 @@
     <slot />
   </main>
   <footer class="container flex flex-row justify-end">
-    <a href="https://github.com/StephanPitois/mfe-shell">GitHub</a>
+    <!-- <a href="https://github.com/StephanPitois/mfe-shell">GitHub</a> -->
   </footer>
 </div>
 
