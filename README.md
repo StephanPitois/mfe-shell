@@ -4,16 +4,16 @@ This demo shows an app shell using Svelte Kit (+ Vite), which provides routing, 
 for micro-frontends. The micro-frontends are simple Svelte apps (+ Rollup), coded and deployed independently from the app shell and from each other. 
 In this implmentation, the micro-frontends have no server-rendering capabilities as the remotes are loaded dynamically on the client-side only.
 
-On the Products page, we have three micro-frontends from three different remotes. When items are added to the cart from the product micro-frontend,
-an event is triggered. The shopping cart micro-frontends listens to that event, updates its count, and opens the shopping cart dialog in response. 
+On the Products page, we have two micro-frontends from two different remotes. When items are added to the cart from the product micro-frontend,
+an event is triggered. The shopping cart micro-frontend listens to that event and updates its count in response. 
 This shows communication between two micro-frontends via simple events.
 
-![image](https://user-images.githubusercontent.com/1167497/216772063-62e5822a-303c-4c81-b77d-867252aedfd3.png)
+![image](https://user-images.githubusercontent.com/1167497/216837563-da995cb4-65e0-42e2-a7c9-b59de8e82966.png)
 
 ## Shell App For Micro-Frontends
 
 - https://github.com/StephanPitois/mfe-1
-- https://github.com/StephanPitois/mfe-2
+- https://github.com/StephanPitois/mfe-2 (not used at the moment)
 - https://github.com/StephanPitois/mfe-3
 
 ## Environment variables
@@ -38,10 +38,10 @@ PUBLIC_REMOTE_APPS='{"remote-app-1": "https://mfe-1-psi.vercel.app/build/bundle.
 Similarly, when working on a specific micro-frontends locally, the preferred setup is to just have the app shell and the targeted micro-frontend
 running locally and then using deployed micro-frontends for the rest. Not only does this keep things simple and
 focused on your development machine, but having only one local micro-frontend allows for live-reload, which is essential
-to good devloper experience. For example, if you want to develop MFE2, your config would look like this:
+to good devloper experience. For example, if you want to develop MFE1, your config would look like this:
 
 ```
-PUBLIC_REMOTE_APPS='{"remote-app-1": "https://mfe-1-psi.vercel.app/build/bundle.js", "remote-app-2": "http://localhost:1972/build/bundle.js", "remote-app-3": "https://mfe-3.vercel.app/build/bundle.js"}'
+PUBLIC_REMOTE_APPS='{"remote-app-1": "http://localhost:1971/build/bundle.js", "remote-app-2": "https://mfe-2.vercel.app/build/bundle.js", "remote-app-3": "https://mfe-3.vercel.app/build/bundle.js"}'
 ```
 
 ## Tech Stack
