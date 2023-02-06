@@ -15,16 +15,10 @@
     --font-size: 16px;
 }
 
-.mfeCard {
-    border: 1px solid transparent;
-    padding: 1rem;
-    border-radius: 10px;
-    border-top-left-radius: 0;
-}
-
 .inspect .mfeCard {
-    border-color: var(--primary);
-}
+    outline: 1px solid var(--primary);
+    outline-offset: 10px;
+    border-radius: 1px;}
 
 .mfeCard_before {
     display: none;
@@ -33,7 +27,7 @@
 .inspect .mfeCard_before {
     display: block;
     position: absolute;
-    transform: translate(0px, -19px);
+    transform: translate(0px, -30px);
     background: #8e24aa;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;

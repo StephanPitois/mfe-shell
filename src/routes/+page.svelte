@@ -5,9 +5,7 @@
 
 <section>
   <h1>Micro-Frontend Demo</h1>
-  <p>
-    A simple Svelte-based micro-frontend demo.
-  </p>
+  <p>A simple Svelte-based micro-frontend demo.</p>
   <p>
     <strong>Store boundaries</strong>: the app shell cannot access a micro-frontend store, and
     micro-frontends can only access their own stores. This boundary gives micro-frontends full
@@ -18,11 +16,3 @@
     micro-frontends use custom events to communicate with each other.
   </p>
 </section>
-
-<style>
-  section {
-    border: 1px solid transparent;
-    padding: 1rem;
-    border-radius: 1rem;
-  }
-</style>
