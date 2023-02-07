@@ -1,7 +1,7 @@
 :root:not([data-theme=dark]),
 [data-theme=light] {
-    --primary: #8e24aa;
-    --primary-hover: rgb(104, 26, 126);
+    --primary: #7e4184;
+    --primary-hover: #563666;
 }
 
 :root {
