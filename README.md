@@ -8,7 +8,7 @@ On the Products page, we have two micro-frontends from two different remotes. Wh
 an event is triggered. The shopping cart micro-frontend listens to that event and updates its count in response. 
 This shows communication between two micro-frontends via simple events.
 
-![mfe-shell-ten vercel app_products(Nest Hub)](https://user-images.githubusercontent.com/32743445/217276714-649ab4c3-273b-4c57-96b3-2ed133b861ed.png)
+![image](https://user-images.githubusercontent.com/1167497/217554631-c60aa122-fe73-4bf9-8168-65222e7fbd8d.png)
 
 ## Shell App For Micro-Frontends
 
