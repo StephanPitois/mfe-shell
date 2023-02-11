@@ -3,7 +3,7 @@
   import { PUBLIC_REMOTE_APPS } from '$env/static/public';
   import { loadedScripts, loadScriptQueue } from '$lib/micro-frontends/stores';
   import { loaders } from '$lib/micro-frontends/stores';
-  import { fade, fly } from 'svelte/transition';
+  import { fly } from 'svelte/transition';
 
   /**
    * @type {string}
@@ -90,7 +90,7 @@
   }
 </script>
 
-<div class:hidden={!loaded} in:fade>
+<div class:hidden={!loaded} in:fly={{ y: 1080, duration: 2000 }}>
   <div class="mfeCard_before">
     {component.toString().replace('()', '').replace('=>', '').trim()}
   </div>
