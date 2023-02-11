@@ -90,7 +90,7 @@
   }
 </script>
 
-<div class:hidden={!loaded} in:fly={{ y: 200, duration: 2000 }} out:fade>
+<div class:hidden={!loaded} in:fade>
   <div class="mfeCard_before">
     {component.toString().replace('()', '').replace('=>', '').trim()}
   </div>
