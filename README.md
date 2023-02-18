@@ -12,6 +12,8 @@ This shows communication between two micro-frontends via simple events.
 
 ## Shell App For Micro-Frontends
 
+See: https://single-spa.js.org/docs/recommended-setup, https://github.com/systemjs/systemjs
+
 - https://github.com/StephanPitois/mfe-1
 - https://github.com/StephanPitois/mfe-2 (not used at the moment)
 - https://github.com/StephanPitois/mfe-3

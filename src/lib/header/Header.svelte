@@ -1,5 +1,4 @@
 <script>
-  // @ts-nocheck
   import { page } from '$app/stores';
   import RemoteModule from '$lib/micro-frontends/RemoteModule.svelte';
   import { inspect } from '$lib/stores.js';
@@ -38,8 +37,7 @@
     </ul>
     <ul class="gap-5">
       <li>
-        <!-- svelte-ignore missing-declaration -->
-        <RemoteModule remote="remote-app-3" component={() => remote_app_3.ShoppingCart} />
+        <RemoteModule remote="remote-app-3" component="ShoppingCart" />
       </li>
     </ul>
   </nav>

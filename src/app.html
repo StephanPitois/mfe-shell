@@ -7,6 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" rel="preload" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
   <link rel="stylesheet" rel="preload" href="/global.css">
+  <!-- <script type="systemjs-importmap">
+    {
+      "imports": {
+        "remote-app-1": "http://localhost:1971/build/bundle.systemjs.js",
+        "remote-app-3": "http://localhost:1973/build/bundle.systemjs.js"
+      }
+    }
+  </script> -->
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "remote-app-1": "https://mfe-1-psi.vercel.app/build/bundle.systemjs.js",
+        "remote-app-3": "https://mfe-3.vercel.app/build/bundle.systemjs.js"
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.js"></script>
   %sveltekit.head%
 </head>
 
