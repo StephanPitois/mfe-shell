@@ -1,4 +1,5 @@
 <script>
+  import 'systemjs';
   import { onMount } from 'svelte';
 
   /**
