@@ -1,7 +1,9 @@
+/* https://design.frontlineeducation.com/toolkit/foundations/color/#402b56 */
+
 :root:not([data-theme=dark]),
 [data-theme=light] {
-    --primary: #7e4184;
-    --primary-hover: #563666;
+    --primary: #7e4082;
+    --primary-hover: #402b56;
     --background-color: #e5e9ec;
     --color: #2f353f;
     --card-background-color: #fff;
@@ -25,20 +27,21 @@ button {
     border: none;
     border-radius: 3px;
     background-color: #2e7ab8;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(#418fcf,#2e7ab8);
+    font-size: 14px;
+    /* background-repeat: repeat-x;
+    background-image: linear-gradient(#418fcf,#2e7ab8); */
 }
 
 button:hover {
-    background-color: #2e7ab8;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(#418fcf,#296ea6);
+    background-color: #296ea6;
+    /* background-repeat: repeat-x;
+    background-image: linear-gradient(#418fcf,#296ea6); */
 }
 
 button:active {
-    background-color: #2e7ab8;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(#2e7ab8,#418fcf);
+    background-color: #418fcf;
+    /* background-repeat: repeat-x;
+    background-image: linear-gradient(#2e7ab8,#418fcf); */
 }
 
 h1 {
@@ -60,8 +63,8 @@ article {
 }
 
 .inspect .mfeCard {
-    outline: 5px dashed #7e4184;
-    outline-offset: 8px;
+    outline: 4px solid #52a38f;
+    outline-offset: 9px;
     border-radius: 1px;
 }
 
@@ -73,7 +76,7 @@ article {
     display: block;
     position: absolute;
     transform: translate(0px, -21px);
-    background: #1b2832;
+    background: #52a38f;
     border-radius: 10px;
     padding: 0 10px;
     font-size: small;
