@@ -2,9 +2,15 @@
 [data-theme=light] {
     --primary: #7e4184;
     --primary-hover: #563666;
+    --background-color: #e5e9ec;
+    --color: #2f353f;
+    --card-background-color: #fff;
+    --card-box-shadow: none;
+    --border-radius: 3px;
 }
 
 :root {
+    --font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --form-element-spacing-vertical: 0.75rem;
     --form-element-spacing-horizontal: 1rem;
     --form-element-spacing-vertical: 0.25rem;
@@ -15,10 +21,49 @@
     --font-size: 16px;
 }
 
+button {
+    border: none;
+    border-radius: 3px;
+    background-color: #2e7ab8;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(#418fcf,#2e7ab8);
+}
+
+button:hover {
+    background-color: #2e7ab8;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(#418fcf,#296ea6);
+}
+
+button:active {
+    background-color: #2e7ab8;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(#2e7ab8,#418fcf);
+}
+
+h1 {
+    font-weight: 300;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+strong {
+    font-weight: 600;
+}
+
+article {
+    border: 1px solid #c8d0d6;
+    padding: 1.25rem;
+    margin: 0;
+}
+
 .inspect .mfeCard {
-    outline: 1px solid #1b2832;
-    outline-offset: 10px;
-    border-radius: 1px;}
+    outline: 5px dashed #7e4184;
+    outline-offset: 8px;
+    border-radius: 1px;
+}
 
 .mfeCard_before {
     display: none;
@@ -180,6 +225,12 @@ div.no-flex {
 
 nav {
     flex-wrap: wrap;
+    border-bottom: 1px solid #c0c8cf;
+}
+
+nav li {
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 .w-auto {

@@ -3,8 +3,8 @@
   <meta name="description" content="MFE demo app" />
 </svelte:head>
 
-<section>
-  <h1>Micro-Frontend Demo</h1>
+<h1>Micro-Frontend Demo</h1>
+<article>
   <p>A simple Svelte-based micro-frontend demo.</p>
   <p>
     <strong>Store boundaries</strong>: the app shell cannot access a micro-frontend store, and
@@ -15,4 +15,4 @@
     <strong>Custom events</strong>: when rendered on the same page, the app shell and the
     micro-frontends use custom events to communicate with each other.
   </p>
-</section>
+</article>
