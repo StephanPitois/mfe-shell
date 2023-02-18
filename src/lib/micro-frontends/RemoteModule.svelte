@@ -17,17 +17,17 @@
 
   const remotes = JSON.parse(PUBLIC_REMOTE_APPS);
   const scriptRemoteUrl = remotes[remote];
-  const styleRemoteUrl = scriptRemoteUrl.replace('.js', '.css');
+  // const styleRemoteUrl = scriptRemoteUrl.replace('.js', '.css');
 
   const id = `mfe-${crypto.randomUUID()}`;
-  const styleId = `mfe-style-${remote}`;
+  // const styleId = `mfe-style-${remote}`;
   const scriptId = `mfe-script-${remote}`;
 
   let loaded = false;
   $loaders++;
 
   onMount(async () => {
-    loadStyle(styleRemoteUrl, styleId);
+    // loadStyle(styleRemoteUrl, styleId);
     loadScript(scriptRemoteUrl, scriptId, () => {
       const componentConstructor = component();
       new componentConstructor({ target: document.querySelector(`#${id}`) });
@@ -36,23 +36,23 @@
     });
   });
 
-  /**
-   * @param {string} url
-   * @param {string} id
-   */
-  function loadStyle(url, id) {
-    // Already loaded?
-    if (document.querySelector(`#${id}`)) {
-      return;
-    }
-    // Load script
-    const elem = document.createElement('link');
-    elem.setAttribute('type', 'text/css');
-    elem.setAttribute('rel', 'stylesheet');
-    elem.setAttribute('href', url);
-    elem.setAttribute('id', id);
-    document.head.appendChild(elem);
-  }
+  // /**
+  //  * @param {string} url
+  //  * @param {string} id
+  //  */
+  // function loadStyle(url, id) {
+  //   // Already loaded?
+  //   if (document.querySelector(`#${id}`)) {
+  //     return;
+  //   }
+  //   // Load script
+  //   const elem = document.createElement('link');
+  //   elem.setAttribute('type', 'text/css');
+  //   elem.setAttribute('rel', 'stylesheet');
+  //   elem.setAttribute('href', url);
+  //   elem.setAttribute('id', id);
+  //   document.head.appendChild(elem);
+  // }
 
   /**
    * @param {string} url
