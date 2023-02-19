@@ -10,13 +10,12 @@
   <link rel="stylesheet" rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" rel="preload" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
   <link rel="stylesheet" rel="preload" href="/global.css">
-  <script type="systemjs-importmap">
-    {
-      "imports": {
-        "remote-app-1": "%sveltekit.env.PUBLIC_REMOTE_APP_1%",
-        "remote-app-3": "%sveltekit.env.PUBLIC_REMOTE_APP_3%"
-      }
-    }
+  <script>
+    // We can't use Import Maps because of lack of Safari support. See https://caniuse.com/import-maps.
+    const mfe_importmap = {
+      "remote-app-1": "%sveltekit.env.PUBLIC_REMOTE_APP_1%",
+      "remote-app-3": "%sveltekit.env.PUBLIC_REMOTE_APP_3%"
+    };
   </script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.js"></script> -->
   %sveltekit.head%

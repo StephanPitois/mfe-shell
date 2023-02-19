@@ -1,5 +1,4 @@
 <script>
-  import 'systemjs';
   import { onMount } from 'svelte';
 
   /**
@@ -18,18 +17,16 @@
 
   onMount(async () => {
     // @ts-ignore
-    System.import(remote).then((module) => {
-      new module[component]({
+    const url = mfe_importmap[remote];
+    import(/* @vite-ignore */ url).then((module) => {
+      const constructor = module[component];
+      new constructor({
         target: document.getElementById(id)
       });
       loaded = true;
     });
   });
 </script>
-
-<svelte:head>
-  <script type="systemjs-module" src="import:{remote}"></script>
-</svelte:head>
 
 <!-- <div class:hidden={!loaded} in:fly={{ y: 100, duration: 1000 }}> -->
 <div class:hidden={!loaded}>
