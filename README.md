@@ -20,8 +20,8 @@ This shows communication between two micro-frontends via simple events.
 Add a `.env` file to your project with this content:
 
 ```
-PUBLIC_REMOTE_APP_1=http://localhost:1971/build/bundle.systemjs.js
-PUBLIC_REMOTE_APP_3=http://localhost:1973/build/bundle.systemjs.js
+PUBLIC_REMOTE_APP_1=http://localhost:1971/build/bundle.esm.js
+PUBLIC_REMOTE_APP_3=http://localhost:1973/build/bundle.esm.js
 ```
 
 For production, these will need to be configured in your deployment pipeline
@@ -32,8 +32,8 @@ You can use those locally too. For example, if you are working on the app shell 
 micro-frontends locally, change your local `.env` to this:
 
 ```
-PUBLIC_REMOTE_APP_1=https://mfe-1-psi.vercel.app/build/bundle.systemjs.js
-PUBLIC_REMOTE_APP_3=https://mfe-3.vercel.app/build/bundle.systemjs.js
+PUBLIC_REMOTE_APP_1=https://mfe-1-psi.vercel.app/build/bundle.esm.js
+PUBLIC_REMOTE_APP_3=https://mfe-3.vercel.app/build/bundle.esm.js
 ```
 
 Similarly, when working on a specific micro-frontends locally, the preferred setup is to just have the app shell and the targeted micro-frontend
@@ -42,8 +42,8 @@ focused on your development machine, but having only one local micro-frontend al
 to good devloper experience. For example, if you want to develop MFE1, your config would look like this:
 
 ```
-PUBLIC_REMOTE_APP_1=http://localhost:1971/build/bundle.systemjs.js
-PUBLIC_REMOTE_APP_3=https://mfe-3.vercel.app/build/bundle.systemjs.js
+PUBLIC_REMOTE_APP_1=http://localhost:1971/build/bundle.esm.js
+PUBLIC_REMOTE_APP_3=https://mfe-3.vercel.app/build/bundle.esm.js
 ```
 
 ## Tech Stack
