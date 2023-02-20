@@ -14,7 +14,7 @@
 </script>
 
 {#if $loaders}
-  <!-- <Loader /> -->
+  <Loader />
 {/if}
 
 <div class="wrapper gap-10" class:inspect={$inspect}>

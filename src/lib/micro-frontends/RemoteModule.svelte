@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { loaders } from '$lib/micro-frontends/stores';
 
   /**
    * @type {string}
@@ -10,6 +11,8 @@
    * @type {string}
    */
   export let component;
+
+  $loaders++;
 
   const id = `mfe-${crypto.randomUUID()}`;
 
@@ -26,6 +29,7 @@
         new constructor({ target });
         error = '';
         loaded = true;
+        $loaders--;
       })
       .catch((err) => {
         error = err.message;
