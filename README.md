@@ -1,6 +1,6 @@
 # Micro-Frontends with Svelte
 
-This demo shows an app shell using Svelte Kit (+ Vite), which provides routing, a place to keep pages that must be server-side rendered, and a host
+This demo shows an app shell using SvelteKit, which provides routing, a place to keep pages that must be server-side rendered, and a host
 for micro-frontends. The micro-frontends are simple Svelte apps (+ Rollup), coded and deployed independently from the app shell and from each other. 
 In this implementation, the micro-frontends have no server-rendering capabilities as the remotes are loaded dynamically on the client-side only.
 
