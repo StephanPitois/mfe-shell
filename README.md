@@ -14,7 +14,7 @@ This shows communication between two micro-frontends via simple events.
 
 - App Shell | SvelteKit app deployed to Vercel | https://mfe-shell-ten.vercel.app/
 - MFE1 | Svelte module deployed to AWS S3 with AWS Lambda Function as backend | https://github.com/StephanPitois/mfe-1
-- MFE3 | Svelte module deployed to Vercel | https://github.com/StephanPitois/mfe-3
+- MFE3 | Svelte module deployed to AWS S3 | https://github.com/StephanPitois/mfe-3
 
 ## Environment variables
 
@@ -33,8 +33,8 @@ You can use those locally too. For example, if you are working on the app shell 
 micro-frontends locally, change your local `.env` to this:
 
 ```
-PUBLIC_REMOTE_APP_1=https://mfe-1-psi.vercel.app/build/bundle.esm.js
-PUBLIC_REMOTE_APP_3=https://mfe-3.vercel.app/build/bundle.esm.js
+PUBLIC_REMOTE_APP_1=https://d14ypcdlwpkk4n.cloudfront.net/build/bundle.esm.js
+PUBLIC_REMOTE_APP_3=https://d2mzhg2tanon84.cloudfront.net/build/bundle.esm.js
 ```
 
 Similarly, when working on a specific micro-frontends locally, the preferred setup is to just have the app shell and the targeted micro-frontend
@@ -44,18 +44,14 @@ to good devloper experience. For example, if you want to develop MFE1, your conf
 
 ```
 PUBLIC_REMOTE_APP_1=http://localhost:1971/build/bundle.esm.js
-PUBLIC_REMOTE_APP_3=https://mfe-3.vercel.app/build/bundle.esm.js
+PUBLIC_REMOTE_APP_3=https://d2mzhg2tanon84.cloudfront.net/build/bundle.esm.js
 ```
 
 ## Deployment
 
-Initially, all apps were deployed to Vercel. While Vercel is a great platform with fantastic DX, not all engineering teams have the option to use it, and often they will have to deploy their apps to AWS directly instead - or to some other provider. At the moment, the deployment is still mostly on Vercel, except for MFE1, which is deployed to AWS S3 from GitHub with a GitHub Action when code is merged into `main`. The S3 bucket serves as a CloudFront origin. MFE1 is also backed by an AWS Lambda Function that returns the list of products.
+Vercel is a great platform with fantastic DX but not all engineering teams have the option of using it, and often they will have to deploy their apps to AWS directly instead - or to some other provider. At the moment, the deployment is on Vercel for the App Shell, while MFE1 nad MFE3 are deployed to AWS S3 via GitHub Actions when code is merged into `main`. The S3 buckets are set as CloudFront origins. MFE1 is also backed by an AWS Lambda Function that returns the list of products.
 
-<img src="https://user-images.githubusercontent.com/1167497/220002791-ef210de2-36b3-457b-b40a-fca02f0ddb6e.png" width="500"/>
-
-For consistency, all apps will eventually be deployed to AWS:
-
-<img src="https://user-images.githubusercontent.com/1167497/220003195-e2daa109-c535-4840-853a-e3a3cfb784f6.png" width="750"/>
+<img src="https://user-images.githubusercontent.com/1167497/220025966-bc2e3809-ab38-4818-970f-c41b814120f0.png" width="500"/>
 
 While SvelteKit is still used for the app shell, I would like to look into using single-spa or routify instead. SvelteKit is a really great tool, but you don't get to use it fully when limiting it to being a MFE app shell. Using a tool meant for micro-frontends, or just a lightweight client-side router seems to make more sense as opposed to trying to force SvelteKit into something it was not designed to be.
 
