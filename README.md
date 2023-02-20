@@ -10,10 +10,11 @@ This shows communication between two micro-frontends via simple events.
 
 ![image](https://user-images.githubusercontent.com/1167497/217554631-c60aa122-fe73-4bf9-8168-65222e7fbd8d.png)
 
-## Shell App For Micro-Frontends
+## App Shell For Micro-Frontends
 
-- https://github.com/StephanPitois/mfe-1
-- https://github.com/StephanPitois/mfe-3
+- App Shell | SvelteKit app deployed to Vercel | https://mfe-shell-ten.vercel.app/
+- MFE1 | Svelte module deployed to AWS S3 with AWS Lambda Function as backend | https://github.com/StephanPitois/mfe-1
+- MFE3 | Svelte module deployed to Vercel | https://github.com/StephanPitois/mfe-3
 
 ## Environment variables
 
